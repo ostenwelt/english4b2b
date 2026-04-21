@@ -117,12 +117,21 @@ border-bottom:none;padding:0;
 background:#0F172A;color:#FAFAFA;
 padding:96px 0 120px;position:relative;overflow:hidden;
 }
-.hero::before{
+.hero-bg{
+position:absolute;inset:0;
+background-image:url(‘brand/hero-bg.jpg’);
+background-size:cover;
+background-position:center 30%;
+opacity:.35;
+z-index:0;
+}
+.hero::after{
 content:””;position:absolute;inset:0;
-background:radial-gradient(ellipse 800px 400px at 70% 0%,rgba(148,163,184,.08),transparent 60%);
+background:linear-gradient(to right, rgba(15,23,42,.85) 40%, rgba(15,23,42,.4) 100%);
+z-index:1;
 pointer-events:none;
 }
-.hero-inner{position:relative;z-index:1}
+.hero-inner{position:relative;z-index:2}
 .eyebrow{font-size:11px;font-weight:600;letter-spacing:.22em;color:#94A3B8;text-transform:uppercase;margin-bottom:28px}
 .eyebrow .dot{margin:0 10px;opacity:.6}
 h1{
@@ -291,6 +300,7 @@ section{padding:72px 0}
 <!-- ============ HERO ============ -->
 
 <header class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
   <div class="wrap hero-inner">
     <div class="eyebrow">Corporate English<span class="dot">·</span>AI Fluency</div>
     <h1>The English that gets you promoted — and gets <em>more from your AI.</em></h1>
