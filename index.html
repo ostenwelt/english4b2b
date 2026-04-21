@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>english4b2b · Corporate English · Global Fluency</title>
+<meta name="description" content="A rigorous, AI-native English curriculum for Portuguese-speaking professionals whose work is international. Designed by a former Delta Air Lines strategist and Harvard alumnus." />
+<link rel="icon" href="brand/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+/* --- tokens --- */
+:root{
+  --ink:#0F172A;
+  --slate:#475569;
+  --mist:#94A3B8;
+  --fog:#64748B;
+  --paper:#FAFAFA;
+  --line:#E2E8F0;
+  --line-dark:#1E293B;
+  --max: 1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif;
+  font-size:17px;
+  line-height:1.6;
+  color:var(--ink);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
+
+/* --- nav --- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(15,23,42,.92);
+  backdrop-filter:saturate(140%) blur(12px);
+  color:#FAFAFA;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:68px;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{width:28px;height:28px}
+.brand-word{font-weight:700;font-size:18px;letter-spacing:-.01em}
+.brand-word .accent{color:var(--mist)}
+.nav-links{display:flex;gap:36px;align-items:center;font-size:14px;font-weight:500;color:#CBD5E1}
+.nav-links a{transition:color .2s}
+.nav-links a:hover{color:#FAFAFA}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  height:42px;padding:0 20px;border-radius:3px;
+  font-size:14px;font-weight:600;letter-spacing:.01em;
+  transition:all .2s;white-space:nowrap;
+}
+.btn-primary{background:#FAFAFA;color:var(--ink)}
+.btn-primary:hover{background:#fff;transform:translateY(-1px)}
+.btn-primary-dark{background:var(--ink);color:#FAFAFA}
+.btn-primary-dark:hover{background:#000}
+.btn-ghost{border:1px solid rgba(255,255,255,.18);color:#FAFAFA}
+.btn-ghost:hover{border-color:rgba(255,255,255,.4)}
+.btn-ghost-dark{border:1px solid var(--line);color:var(--ink)}
+.btn-ghost-dark:hover{border-color:var(--slate)}
+@media (max-width:780px){
+  .nav-links .link-hide{display:none}
+}
+
+/* --- hero --- */
+.hero{
+  background:var(--ink);
+  color:#FAFAFA;
+  padding:96px 0 120px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  /* subtle diagonal light to add dimension */
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse 800px 400px at 70% 0%, rgba(148,163,184,.08), transparent 60%);
+  pointer-events:none;
+}
+.hero-inner{position:relative;z-index:1}
+.eyebrow{
+  font-size:11px;font-weight:600;letter-spacing:.22em;color:var(--mist);
+  text-transform:uppercase;margin-bottom:28px;
+}
+.eyebrow .dot{margin:0 10px;opacity:.6}
+h1{
+  font-family:'Fraunces',Georgia,serif;
+  font-weight:400;
+  font-size:clamp(36px, 5.2vw, 64px);
+  line-height:1.08;
+  letter-spacing:-.015em;
+  max-width:860px;
+  color:#FAFAFA;
+}
+h1 em{font-style:italic;color:var(--mist);font-weight:400}
+.hero-sub{
+  font-size:clamp(17px,1.3vw,20px);
+  color:#CBD5E1;
+  max-width:620px;
+  margin-top:28px;
+  line-height:1.55;
+}
+.hero-ctas{display:flex;gap:14px;margin-top:44px;flex-wrap:wrap}
+.hero-credibility{
+  display:flex;gap:36px;flex-wrap:wrap;
+  margin-top:72px;padding-top:32px;
+  border-top:1px solid rgba(255,255,255,.08);
+  font-size:13px;color:var(--mist);letter-spacing:.04em;
+}
+.hero-credibility strong{color:#FAFAFA;font-weight:600;letter-spacing:0}
+.hero-credibility span{display:flex;align-items:center;gap:10px}
+.hero-credibility .bullet{width:4px;height:4px;border-radius:50%;background:var(--mist);opacity:.5}
+
+/* --- sections --- */
+section{padding:112px 0}
+.section-head{max-width:720px;margin-bottom:64px}
+.section-eyebrow{
+  font-size:11px;font-weight:600;letter-spacing:.22em;color:var(--fog);
+  text-transform:uppercase;margin-bottom:20px;
+}
+h2{
+  font-family:'Fraunces',Georgia,serif;
+  font-weight:400;
+  font-size:clamp(32px,3.6vw,46px);
+  line-height:1.1;
+  letter-spacing:-.015em;
+  color:var(--ink);
+}
+h2 em{font-style:italic;color:var(--slate);font-weight:400}
+.section-sub{color:var(--slate);margin-top:20px;font-size:18px;max-width:620px}
+
+/* --- method --- */
+.method{background:var(--paper);border-top:1px solid var(--line)}
+.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:56px}
+.pillar-num{
+  font-family:'Fraunces',Georgia,serif;font-style:italic;
+  font-size:14px;color:var(--mist);margin-bottom:16px;
+  letter-spacing:.02em;
+}
+.pillar h3{font-size:22px;font-weight:600;letter-spacing:-.01em;margin-bottom:14px}
+.pillar p{color:var(--slate);font-size:16px;line-height:1.65}
+@media (max-width:860px){ .method-grid{grid-template-columns:1fr;gap:40px} }
+
+/* --- courses --- */
+.courses{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:16px}
+.course{
+  background:var(--paper);
+  border:1px solid var(--line);
+  padding:40px 36px;
+  display:flex;flex-direction:column;
+  transition:border-color .2s, transform .2s;
+}
+.course:hover{border-color:var(--slate);transform:translateY(-2px)}
+.course-tag{
+  font-size:11px;font-weight:600;letter-spacing:.2em;color:var(--fog);
+  text-transform:uppercase;margin-bottom:16px;
+}
+.course h3{
+  font-family:'Fraunces',Georgia,serif;font-weight:400;
+  font-size:32px;letter-spacing:-.01em;margin-bottom:12px;
+}
+.course-positioning{color:var(--slate);font-size:15px;line-height:1.55;margin-bottom:24px}
+.course-meta{
+  font-size:13px;color:var(--fog);letter-spacing:.02em;
+  padding:14px 0;margin-bottom:20px;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.course-list{list-style:none;margin-bottom:28px}
+.course-list li{
+  position:relative;padding-left:22px;
+  color:var(--ink);font-size:15px;line-height:1.55;
+  margin-bottom:10px;
+}
+.course-list li::before{
+  content:"";position:absolute;left:0;top:11px;
+  width:10px;height:1px;background:var(--mist);
+}
+.course-price{
+  font-size:22px;font-weight:600;color:var(--ink);
+  margin-bottom:4px;
+}
+.course-price .currency{font-size:13px;color:var(--fog);font-weight:500;margin-right:4px}
+.course-cadence{font-size:13px;color:var(--fog);margin-bottom:24px}
+.course-cta{margin-top:auto}
+.course-featured{background:var(--ink);color:#FAFAFA;border-color:var(--ink)}
+.course-featured h3{color:#FAFAFA}
+.course-featured .course-tag{color:var(--mist)}
+.course-featured .course-positioning{color:#CBD5E1}
+.course-featured .course-meta{color:var(--mist);border-color:var(--line-dark)}
+.course-featured .course-list li{color:#FAFAFA}
+.course-featured .course-list li::before{background:var(--mist)}
+.course-featured .course-price{color:#FAFAFA}
+.course-featured .course-price .currency{color:var(--mist)}
+.course-featured .course-cadence{color:var(--mist)}
+.course-featured .btn-ghost-dark{border-color:rgba(255,255,255,.25);color:#FAFAFA}
+.course-featured .btn-ghost-dark:hover{border-color:#FAFAFA}
+@media (max-width:980px){ .courses-grid{grid-template-columns:1fr;max-width:520px;margin:16px auto 0} }
+
+/* --- about --- */
+.about{background:var(--paper);border-bottom:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:380px 1fr;gap:80px;align-items:start}
+.headshot-frame{
+  position:relative;aspect-ratio:4/5;
+  background:var(--ink);
+  overflow:hidden;
+}
+.headshot-frame img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.headshot-placeholder{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg, #1E293B, #0F172A);
+  color:var(--mist);font-size:12px;text-align:center;
+  letter-spacing:.1em;padding:24px;
+  font-family:'Inter',sans-serif;
+}
+.headshot-placeholder .ph-name{
+  font-family:'Fraunces',serif;font-style:italic;font-size:48px;
+  color:#FAFAFA;margin-bottom:14px;letter-spacing:-.02em;
+}
+.headshot-caption{
+  margin-top:16px;font-size:12px;color:var(--fog);letter-spacing:.04em;
+}
+.about-bio h2{margin-bottom:32px}
+.about-bio p{color:var(--slate);font-size:18px;line-height:1.7;margin-bottom:22px;max-width:560px}
+.about-bio p strong{color:var(--ink);font-weight:600}
+.credentials{
+  display:flex;gap:12px;flex-wrap:wrap;margin-top:36px;padding-top:32px;
+  border-top:1px solid var(--line);
+}
+.credential{
+  font-size:13px;font-weight:500;letter-spacing:.04em;
+  padding:8px 14px;border:1px solid var(--line);
+  color:var(--slate);
+}
+.credential strong{color:var(--ink);font-weight:600}
+@media (max-width:860px){ .about-grid{grid-template-columns:1fr;gap:48px} .headshot-frame{max-width:340px} }
+
+/* --- faq --- */
+.faq{background:#fff}
+.faq-list{border-top:1px solid var(--line)}
+.faq-item{
+  border-bottom:1px solid var(--line);
+  padding:28px 0;
+  display:grid;grid-template-columns:380px 1fr;gap:48px;align-items:start;
+}
+.faq-q{
+  font-family:'Fraunces',Georgia,serif;font-weight:400;
+  font-size:22px;letter-spacing:-.01em;color:var(--ink);
+  line-height:1.3;
+}
+.faq-a{color:var(--slate);font-size:16px;line-height:1.65}
+@media (max-width:780px){ .faq-item{grid-template-columns:1fr;gap:14px} }
+
+/* --- final cta --- */
+.cta{
+  background:var(--ink);color:#FAFAFA;
+  padding:120px 0;text-align:left;
+  position:relative;overflow:hidden;
+}
+.cta::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse 700px 300px at 20% 100%, rgba(148,163,184,.1), transparent 60%);
+  pointer-events:none;
+}
+.cta-inner{position:relative;z-index:1;max-width:720px}
+.cta h2{color:#FAFAFA;font-size:clamp(36px,4.2vw,54px)}
+.cta h2 em{color:var(--mist)}
+.cta p{color:#CBD5E1;font-size:18px;margin-top:20px;margin-bottom:40px;max-width:520px}
+.cta-form{display:flex;gap:12px;max-width:520px;flex-wrap:wrap}
+.cta-form input{
+  flex:1;min-width:220px;
+  background:transparent;
+  border:1px solid rgba(255,255,255,.2);
+  color:#FAFAFA;
+  height:52px;padding:0 18px;
+  font:inherit;font-size:15px;
+  border-radius:3px;
+}
+.cta-form input::placeholder{color:var(--mist)}
+.cta-form input:focus{outline:none;border-color:#FAFAFA}
+.cta-form .btn{height:52px;padding:0 28px}
+.cta-fine{font-size:13px;color:var(--fog);margin-top:20px;letter-spacing:.02em}
+
+/* --- footer --- */
+footer{
+  background:var(--ink);color:#CBD5E1;
+  border-top:1px solid var(--line-dark);
+  padding:48px 0 40px;font-size:14px;
+}
+.footer-inner{
+  display:flex;justify-content:space-between;align-items:center;gap:32px;
+  flex-wrap:wrap;
+}
+.footer-brand{display:flex;align-items:center;gap:12px;color:#FAFAFA}
+.footer-tag{color:var(--mist);font-size:11px;letter-spacing:.22em;text-transform:uppercase}
+.footer-meta{display:flex;gap:24px;color:var(--fog);font-size:13px}
+.footer-meta a:hover{color:#FAFAFA}
+
+/* --- utility --- */
+.only-mobile{display:none}
+@media (max-width:780px){
+  .only-mobile{display:block}
+  .hide-mobile{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" role="navigation" aria-label="primary">
+  <div class="wrap nav-inner">
+    <a href="#" class="brand" aria-label="english4b2b home">
+      <svg class="brand-mark" viewBox="0 0 200 200" aria-hidden="true">
+        <g transform="translate(100, 100)">
+          <rect x="-26" y="-36" width="14" height="72" rx="7" fill="#FAFAFA" transform="rotate(-14, -19, 0)"/>
+          <rect x="12" y="-36" width="14" height="72" rx="7" fill="#94A3B8" transform="rotate(-14, 19, 0)"/>
+        </g>
+      </svg>
+      <span class="brand-word">english<span class="accent">4</span>b<span class="accent">2</span>b</span>
+    </a>
+    <div class="nav-links">
+      <a href="#courses" class="link-hide">Courses</a>
+      <a href="#method" class="link-hide">Method</a>
+      <a href="#about" class="link-hide">About</a>
+      <a href="#faq" class="link-hide">FAQ</a>
+      <a href="#courses" class="btn btn-primary">See the courses</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div class="eyebrow">Corporate English<span class="dot">·</span>Global Fluency</div>
+    <h1>Corporate English for professionals whose work is <em>international.</em></h1>
+    <p class="hero-sub">A set of focused, AI-native practice courses for Portuguese-speaking professionals — built around the English moments that actually decide careers: meetings, presentations, interviews.</p>
+    <div class="hero-ctas">
+      <a href="#courses" class="btn btn-primary">See the courses</a>
+      <a href="#about" class="btn btn-ghost">About Marcio</a>
+    </div>
+    <div class="hero-credibility">
+      <span>Business Strategy · <strong>Harvard Business School</strong></span>
+      <span class="bullet" aria-hidden="true"></span>
+      <span>Global Sales · <strong>Delta Air Lines</strong></span>
+      <span class="bullet" aria-hidden="true"></span>
+      <span>Trilingual <strong>EN · PT · ES</strong></span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ METHOD ============ -->
+<section class="method" id="method">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">The Method</div>
+      <h2>Practice, not <em>lessons.</em></h2>
+      <p class="section-sub">English4B2B is not another conversation app, and not a school. Each course is a focused practice tool — built around the English moments your career turns on.</p>
+    </div>
+    <div class="method-grid">
+      <div class="pillar">
+        <div class="pillar-num">i.</div>
+        <h3>Specific situations</h3>
+        <p>Every drill is drawn from the English that corporate and international work actually requires — meeting status updates, presentation Q&amp;A, interview questions — not textbook dialogues about restaurants and weather.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">ii.</div>
+        <h3>AI-native feedback</h3>
+        <p>You speak or write a response. The AI returns commentary specific enough to act on — clarity, register, word choice, structure — within seconds, not days. Repeat until the pattern holds.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">iii.</div>
+        <h3>Self-paced. Lifetime access.</h3>
+        <p>Buy a course once; come back whenever the next high-stakes moment is on your calendar. No cohort dates. No waitlists. The tool waits for you, not the other way around.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COURSES ============ -->
+<section class="courses" id="courses">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">The Courses</div>
+      <h2>Three focused tools, built around the moments your career <em>turns on.</em></h2>
+      <p class="section-sub">Each course is self-contained, self-paced, and yours for life. Buy one, or stack them as a ladder.</p>
+    </div>
+
+    <div class="courses-grid">
+
+      <!-- Meeting English -->
+      <article class="course">
+        <div class="course-tag">Course I</div>
+        <h3>Meeting English</h3>
+        <p class="course-positioning">For the status update that goes flat, the question you freeze on, the disagreement you couldn't land in real time.</p>
+        <div class="course-meta">~5 hours · 25 AI-native drills · Lifetime access</div>
+        <ul class="course-list">
+          <li>Status updates that sound like the person leading, not the person reporting</li>
+          <li>Handling Q&amp;A — clarifying, deflecting, buying time without losing credibility</li>
+          <li>Disagreeing and pushing back in the register senior rooms expect</li>
+          <li>AI feedback on clarity, register, and hesitation markers — per response</li>
+        </ul>
+        <div class="course-price"><span class="currency">US$</span>49</div>
+        <div class="course-cadence">Self-paced · Instant access</div>
+        <a href="#" class="btn btn-ghost-dark course-cta">Get Meeting English</a>
+      </article>
+
+      <!-- Presentation English (featured) -->
+      <article class="course course-featured">
+        <div class="course-tag">Course II · Most popular</div>
+        <h3>Presentation English</h3>
+        <p class="course-positioning">For the quarterly review that didn't land, the briefing deck that got rewritten by someone else, the follow-up questions you weren't ready for.</p>
+        <div class="course-meta">~6 hours · 20 drills + slide commentary practice · Lifetime access</div>
+        <ul class="course-list">
+          <li>Opening a briefing so the senior audience leans in — not tunes out</li>
+          <li>Executive-summary register — the one-paragraph version of anything</li>
+          <li>Handling hostile follow-ups and executive interruptions</li>
+          <li>AI feedback on pacing, hedging, and sentence weight — per delivery</li>
+        </ul>
+        <div class="course-price"><span class="currency">US$</span>59</div>
+        <div class="course-cadence">Self-paced · Instant access</div>
+        <a href="#" class="btn btn-ghost-dark course-cta">Get Presentation English</a>
+      </article>
+
+      <!-- Interview English -->
+      <article class="course">
+        <div class="course-tag">Course III</div>
+        <h3>Interview English</h3>
+        <p class="course-positioning">For the international interview, the internal promotion conversation, the moment the English has to hold under pressure.</p>
+        <div class="course-meta">Unlimited simulator runs · 30+ behavioral prompts · Lifetime access</div>
+        <ul class="course-list">
+          <li>AI interview simulator — behavioral, technical, and executive-facing prompts</li>
+          <li>Per-answer feedback on structure, specificity, and senior register</li>
+          <li>Tell-me-about-a-time answers that sound like leadership, not rehearsal</li>
+          <li>Compensation and offer conversations — the English of the last five minutes</li>
+        </ul>
+        <div class="course-price"><span class="currency">US$</span>79</div>
+        <div class="course-cadence">Self-paced · Instant access</div>
+        <a href="#" class="btn btn-ghost-dark course-cta">Get Interview English</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <div class="headshot-frame">
+          <!--
+            HEADSHOT: Save your portrait as brand/marcio-headshot.jpg (4:5 portrait crop, ≥800px tall).
+            When the file is present, it will replace the placeholder below automatically.
+          -->
+          <img src="brand/marcio-headshot.jpg" alt="Marcio, founder of English4B2B" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="headshot-placeholder" style="display:none">
+            <div>
+              <div class="ph-name">M.</div>
+              <div>Save headshot at<br><code style="font-family:ui-monospace,monospace;color:#FAFAFA">brand/marcio-headshot.jpg</code></div>
+            </div>
+          </div>
+        </div>
+        <div class="headshot-caption">Marcio — Founder, English4B2B</div>
+      </div>
+      <div class="about-bio">
+        <div class="section-eyebrow">About</div>
+        <h2>Built from inside the rooms where corporate English <em>is actually used.</em></h2>
+        <p>I work in <strong>Global Sales at Delta Air Lines</strong>, on Strategic Global Sales Programs — the English of board reviews, international partner meetings, and cross-border negotiation is the English I use every week. The people whose careers moved fastest around me were not always the best English speakers — but they were the ones whose English held up in the rooms that mattered.</p>
+        <p>I studied <strong>business strategy at Harvard Business School</strong>, built and sold my own agency before Delta, grew up between Portuguese and English, and am certified in Italian. I designed English4B2B for the English that international careers actually require — and for the Portuguese-speaking professionals I know well, because I am one.</p>
+        <p>The situations are specific. The practice is AI-native. The ladder is yours to climb on your own schedule.</p>
+        <div class="credentials">
+          <span class="credential"><strong>Business Strategy</strong> · Harvard Business School</span>
+          <span class="credential"><strong>Delta Air Lines</strong> · Global Sales</span>
+          <span class="credential"><strong>Trilingual</strong> · EN · PT · ES</span>
+          <span class="credential"><strong>Certified</strong> · Italian · Univ. of Parma</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Questions</div>
+      <h2>Common questions, answered <em>directly.</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">What level of English do I need?</div>
+        <div class="faq-a">Intermediate to advanced. These are practice tools for professionals already working in English who want the language to hold up in higher-stakes moments — not a beginner course.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How is this different from ChatGPT or a conversation app?</div>
+        <div class="faq-a">The drills, prompts, and feedback rubrics are the product. Every exercise is built around a specific corporate moment, and the AI is instructed to evaluate the answer the way a senior colleague would — not as a friendly chat partner. You get pattern-level feedback, not just a reply.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">In what language is the material?</div>
+        <div class="faq-a">In English, with Portuguese notes where useful. The objective is to think and work in English; Portuguese is there to shorten the bridge, not to live on.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How does access work?</div>
+        <div class="faq-a">Buy a course once, come back whenever you need it. Lifetime access to the drills, simulator, and any future additions to that course. No subscription, no renewal.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is there a company / team option?</div>
+        <div class="faq-a">Yes. For teams of six or more, English4B2B runs private workshops with curriculum tailored to the company's sector and stage. Contact directly to discuss.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="cta" id="enroll">
+  <div class="wrap cta-inner">
+    <div class="section-eyebrow" style="color:var(--mist)">Begin</div>
+    <h2>Start with the course your <em>next week</em> needs.</h2>
+    <p>Meeting, presentation, or interview — each course is $49–$79, instant access, yours for life. Or leave your email and we'll send a short note when a new course ships. Nothing else.</p>
+    <form class="cta-form" onsubmit="event.preventDefault(); return false;">
+      <input type="email" placeholder="your professional email" aria-label="Email" />
+      <button type="submit" class="btn btn-primary">Keep me posted</button>
+    </form>
+    <p class="cta-fine">No marketing sequences. No upsell. One email per new release.</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <svg class="brand-mark" viewBox="0 0 200 200" aria-hidden="true">
+        <g transform="translate(100, 100)">
+          <rect x="-26" y="-36" width="14" height="72" rx="7" fill="#FAFAFA" transform="rotate(-14, -19, 0)"/>
+          <rect x="12" y="-36" width="14" height="72" rx="7" fill="#94A3B8" transform="rotate(-14, 19, 0)"/>
+        </g>
+      </svg>
+      <div>
+        <div class="brand-word">english<span style="color:var(--mist)">4</span>b<span style="color:var(--mist)">2</span>b</div>
+        <div class="footer-tag">Corporate English · Global Fluency</div>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <a href="mailto:hello@english4b2b.com">hello@english4b2b.com</a>
+      <span>© 2026 English4B2B</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
