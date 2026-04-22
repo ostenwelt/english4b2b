@@ -111,16 +111,13 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 /* --- hero --- */
 .hero{
-  background-color:#0F172A;
-  background-image:url('brand/hero-bg.jpg');
-  background-size:cover;
-  background-position:center 30%;
+  background:#0F172A url('brand/hero-bg.jpg') center 30% / cover no-repeat;
   color:#FAFAFA;
   padding:96px 0 120px;position:relative;overflow:hidden;
 }
 .hero::before{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(to right, rgba(15,23,42,.88) 20%, rgba(15,23,42,.55) 100%);
+  background:linear-gradient(105deg, rgba(15,23,42,.82) 0%, rgba(15,23,42,.55) 45%, rgba(15,23,42,.18) 100%);
   z-index:0;pointer-events:none;
 }
 .hero-bg{display:none}
@@ -155,7 +152,8 @@ h2 em{font-style:italic;color:#475569;font-weight:400}
 /* --- courses --- */
 .courses{background:#fff;border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0}
 .courses-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:16px;align-items:stretch}
-.course{background:#FAFAFA;border:1px solid #E2E8F0;padding:40px 36px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s;min-width:0}
+.courses-grid > .course{min-width:0;width:100%;max-width:100%}
+.course{background:#FAFAFA;border:1px solid #E2E8F0;padding:40px 36px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s;min-width:0;width:100%}
 .course:hover{border-color:#475569;transform:translateY(-2px)}
 .course-tag{font-size:11px;font-weight:600;letter-spacing:.2em;color:#64748B;text-transform:uppercase;margin-bottom:16px}
 .course h3{font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:32px;letter-spacing:-.01em;margin-bottom:12px;word-break:break-word}
